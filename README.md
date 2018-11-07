@@ -1,5 +1,5 @@
 # Maskers
-Provide a dynamic mask genaration to Android EditText.
+Provide a dynamic mask generation to Android EditText.
 
 How to use
 ---
