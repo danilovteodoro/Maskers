@@ -1,4 +1,36 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+
+
+
+group = "org.dteodor"
+version = "0.1.6"
+
+bintray {
+    user =  System.getenv('B_USER')
+    key = System.getenv('B_KEY')
+    configurations = ['archives']
+    pkg {
+        repo = 'org.dteodor'
+        name = 'maskers'
+        userOrg = 'danilovteodoro'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/danilovteodoro/Maskers'
+        version {
+            name = '0.1.6'
+            desc = '0.1.6'
+            released  = new Date()
+            vcsTag = '0.1.1'
+            attributes = ['maskers': 'org.dteodor:maskers']
+
+
+        }
+    }
+}
+
 
 android {
     compileSdkVersion 28
@@ -6,7 +38,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 17
+        minSdkVersion 14
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
